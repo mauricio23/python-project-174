@@ -1,30 +1,67 @@
 import argparse 
 import json
 
-def definir_rutas():
-    ruta_1 = r'C:\Users\MAURICIO\Documents\GitHub\python-project-174\file1.json'
-    data_1 = json.load(open(ruta_1))
-    print (data_1)
+def cargar_datos(ruta1, ruta2):
     
-    ruta_2 = r'C:\Users\MAURICIO\Documents\GitHub\python-project-174\file2.json'
-    data_2 = json.load(open(ruta_2))
-    print (data_2)
+    with open(ruta1) as f1:
+        data1 = json.load(f1)
+    
+    with open(ruta2) as f2:
+        data2 = json.load(f2)
+    
+    return data1, data2
 
-    return ruta_1, ruta_2
+def stringify(value):
+    
+    if isinstance(value, bool):
+        return str(value).lower()
+    if value is None:
+        return "null"
+    return str(value)
+
+def generate_diff(file_path1, file_path2):
+    # 1. Cargar los datos (puedes usar la función cargar_datos que ya tienes)
+    data1, data2 = cargar_datos(file_path1, file_path2)
+    
+    # 2. Obtener todas las llaves y ordenarlas
+    keys = sorted(data1.keys() | data2.keys())
+    
+    # 3. Construir el resultado (aquí va la magia)
+    lines = ['{']
+    for key in keys:
+       
+        if key in data1 and key in data2:
+            if data1[key] == data2[key]:
+                # El valor es igual en ambos
+                lines.append(f"    {key}: {data1[key]}")
+            else:
+                # El valor cambió (Caso especial del timeout)
+                lines.append(f"  - {key}: {data1[key]}")
+                lines.append(f"  + {key}: {data2[key]}")
+        elif key in data1:
+            # Estaba en el 1 pero ya no en el 2 (Eliminado)
+            lines.append(f"  - {key}: {data1[key]}")
+        else:
+            # No estaba en el 1 pero apareció en el 2 (Agregado)
+            lines.append(f"  + {key}: {data2[key]}")
+        pass
+
+    lines.append('}')
+    return "\n".join(lines)
 
 
 def main():
-   parser = argparse.ArgumentParser(
-     description="Compares two configuration files and shows a difference."
-     )
-   ruta_1, ruta_2 = definir_rutas
-  
+    
+    parser = argparse.ArgumentParser(
+        description="Compares two configuration files and shows a difference."
+    )
+    parser.add_argument("file1")
+    parser.add_argument("file2")
 
-   parser.add_argument(ruta_1, help="First file to compare")
-   parser.add_argument(ruta_2, help="Second file to compare")
-   
-   args = parser.parse_args()
-   
-   
+    args = parser.parse_args()
+
+    diff = generate_diff(args.file1, args.file2)
+
+    print(diff)
 if __name__ == "__main__":
     main()
