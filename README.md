@@ -1,4 +1,6 @@
 ### Hexlet tests and linter status:
+[![hexlet-check](https://github.com/mauricio23/python-project-174/actions/workflows/hexlet-check.yml/badge.svg?branch=main&event=release)](https://github.com/mauricio23/python-project-174/actions/workflows/hexlet-check.yml)
+
 [![Actions Status](https://github.com/mauricio23/python-project-174/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mauricio23/python-project-174/actions)
 
 Descripción
