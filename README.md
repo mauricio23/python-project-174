@@ -1,5 +1,7 @@
 ### Hexlet tests and linter status:
-[![hexlet-check](https://github.com/mauricio23/python-project-174/actions/workflows/hexlet-check.yml/badge.svg?branch=main&event=release)](https://github.com/mauricio23/python-project-174/actions/workflows/hexlet-check.yml)
+[![Maintainability](https://qlty.sh/gh/mauricio23/projects/python-project-174/maintainability.svg)](https://qlty.sh/gh/mauricio23/projects/python-project-174)
+
+[![Code Coverage](https://qlty.sh/gh/mauricio23/projects/python-project-174/coverage.svg)](https://qlty.sh/gh/mauricio23/projects/python-project-174)
 
 [![Actions Status](https://github.com/mauricio23/python-project-174/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mauricio23/python-project-174/actions)
 
