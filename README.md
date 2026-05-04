@@ -5,6 +5,8 @@
 
 [![Actions Status](https://github.com/mauricio23/python-project-174/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mauricio23/python-project-174/actions)
 
+[![hexlet-check](https://github.com/mauricio23/python-project-174/actions/workflows/hexlet-check.yml/badge.svg?event=push)](https://github.com/mauricio23/python-project-174/actions/workflows/hexlet-check.yml)
+
 Descripción
 
 Este proyecto emplea los distintos temas vistos durante el primer módulo, como la definición de funciones y el uso de operadores aritméticos que nos ayudan a resolver problemas lógicos. Además, se practica la utilización de ciclos y condiciones, los cuales nos permiten establecer ciertos criterios o parámetros que determinan la respuesta final de un algoritmo.
