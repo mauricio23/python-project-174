@@ -1,14 +1,25 @@
 import argparse 
 import json
+import os
+import yaml
 
 def cargar_datos(ruta1, ruta2):
-    
-    with open(ruta1) as f1:
-        data1 = json.load(f1)
-    
-    with open(ruta2) as f2:
-        data2 = json.load(f2)
-    
+
+    def cargar_archivo(ruta):
+        _, ext = os.path.splitext(ruta)
+        ext = ext.lower()
+
+        with open(ruta, 'r', encoding='utf-8') as f:
+            if ext == '.json':
+                return json.load(f)
+            elif ext in ['.yml', '.yaml']:
+                return yaml.safe_load(f)
+            else:
+                raise ValueError(f"Extensión no soportada: {ext}")
+
+    data1 = cargar_archivo(ruta1)
+    data2 = cargar_archivo(ruta2)
+
     return data1, data2
 
 def stringify(value):
