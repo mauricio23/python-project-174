@@ -31,3 +31,6 @@ INSTALACION
 
 1. https://github.com/mauricio23/python-project-174.git
 2. python gendiff/scripts/gendiff.py file1.json file2.json
+
+linea para comaparar archivos yml 
+python gendiff/scripts/gendiff.py file1.yml file2.yml  
