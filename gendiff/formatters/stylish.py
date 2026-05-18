@@ -6,17 +6,20 @@ def stringify(value, depth):
     if not isinstance(value, dict):
         return str(value)
 
-    # Si el valor es un diccionario, debemos formatearlo con espacios
-    indent = "    " * depth
+    # Reajuste de la indentación para diccionarios puros dentro de stringify
+    current_indent = "    " * depth
+    closing_indent = "    " * (depth - 1)
     lines = ["{"]
+    
     for key, val in value.items():
-        lines.append(f"{indent}    {key}: {stringify(val, depth + 1)}")
-    lines.append(f"{indent}}")
+        lines.append(f"{current_indent}{key}: {stringify(val, depth + 1)}")
+        
+    lines.append(f"{closing_indent}}}")
     return "\n".join(lines)
+
 
 def format_stylish(diff, depth=1):
     indent = "    " * depth
-    # El prefijo para los signos (+ o -) son 2 espacios menos que la indentación base
     prefix = indent[:-2]
     lines = ["{"]
 
@@ -36,5 +39,6 @@ def format_stylish(diff, depth=1):
         elif t == 'unchanged':
             lines.append(f"{indent}{key}: {stringify(node['value'], depth + 1)}")
 
-    lines.append(f"{indent[:-4]}}}")
+    # El cierre de la llave principal del nivel actual debe alinearse con el nivel anterior
+    lines.append(f"{'    ' * (depth - 1)}}}")
     return "\n".join(lines)
