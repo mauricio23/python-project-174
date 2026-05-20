@@ -7,7 +7,11 @@
 
 Descripción
 
-Este proyecto emplea los distintos temas vistos durante el primer módulo, como la definición de funciones y el uso de operadores aritméticos que nos ayudan a resolver problemas lógicos. Además, se practica la utilización de ciclos y condiciones, los cuales nos permiten establecer ciertos criterios o parámetros que determinan la respuesta final de un algoritmo.
+Este proyecto emplea los distintos temas vistos durante el segundo módulo, como las estructuras anidadas, el manejo de archivos y la serializacióny como utilizamos el tema de la recursividad, ademas tiene un manejo complejo sobre diccionarios y conjuntos que nos ayuda a realizar l separacion de archivos.
+
+analizar que tipo de archivo es y extraer su contenido
+la herramienta debe mirar que cambio entre dos archivos, que se elimino, agrego o modifico
+
 
 saber si un numero es par o impar
 calculadora de numeros aleatorios
@@ -31,6 +35,5 @@ INSTALACION
 
 1. https://github.com/mauricio23/python-project-174.git
 2. python gendiff/scripts/gendiff.py file1.json file2.json
-
-linea para comaparar archivos yml 
+3. linea para comaparar archivos yml 
 python gendiff/scripts/gendiff.py file1.yml file2.yml  
