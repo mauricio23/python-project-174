@@ -7,7 +7,7 @@
 
 Descripción
 
-Este proyecto emplea los distintos temas vistos durante el segundo módulo, como las estructuras anidadas, el manejo de archivos y la serializacióny como utilizamos el tema de la recursividad, ademas tiene un manejo complejo sobre diccionarios y conjuntos que nos ayuda a realizar l separacion de archivos.
+Este proyecto emplea los distintos temas vistos durante el segundo módulo, como las estructuras anidadas, el manejo de archivos y la serialización y como utilizamos el tema de la recursividad, ademas tiene un manejo complejo sobre diccionarios y conjuntos que nos ayuda a realizar la separacion de archivos.
 
 analizar que tipo de archivo es y extraer su contenido
 la herramienta debe mirar que cambio entre dos archivos JSON y YAML, que se elimino, agrego o modifico

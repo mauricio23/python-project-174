@@ -1,5 +1,4 @@
 import argparse
-# Importamos las 3 herramientas que creaste en los otros archivos
 from gendiff.parser import parse
 from gendiff.diff_builder import build_diff
 from gendiff.formatters.stylish import format_stylish
@@ -20,7 +19,7 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Compares two configuration files and shows a difference."
+        description="Compara dos archivos de configuración y muestra una diferencia."
     )
     parser.add_argument("file1")
     parser.add_argument("file2")
