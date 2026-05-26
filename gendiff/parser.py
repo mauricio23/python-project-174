@@ -2,13 +2,13 @@ import json
 import yaml
 import os
 
-def parse(ruta):
-    _, ext = os.path.splitext(ruta)
+def parse(file_path):
+    _, ext = os.path.splitext(file_path)
     ext = ext.lower()
 
-    with open(ruta, 'r', encoding='utf-8') as f:
+    with open(file_path, 'r', encoding='utf-8') as f:
         if ext == '.json':
-            return json.load(f)
+            return json.load(f)  # load sin 's' para leer archivos
         elif ext in ['.yml', '.yaml']:
             return yaml.safe_load(f)
         else:

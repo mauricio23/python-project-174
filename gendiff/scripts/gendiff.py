@@ -7,9 +7,7 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
     # 1. Tu parser lee los archivos (JSON/YAML) y los vuelve diccionarios
     data1 = parse(file_path1)
     data2 = parse(file_path2)
-    print(data1)
-    print(data2)
-    
+
     # 2. Tu diff_builder analiza la profundidad de forma recursiva
     diff_tree = build_diff(data1, data2)
     
