@@ -1,6 +1,6 @@
 from gendiff.parser import parse
 from gendiff.diff_builder import build_diff  # Tu generador de árbol lógico
-from gendiff.formatters.stylish import render_stylish  # Revisa cómo se llama tu función stylish
+from gendiff.formatters.stylish import format_stylish  # Revisa cómo se llama tu función stylish
 from gendiff.formatters.plain import render_plain
 
 def generate_diff(file_path1, file_path2, format_name='stylish'):
@@ -12,7 +12,7 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
     
     # Selector de formato
     if format_name == 'stylish':
-        return render_stylish(diff_tree)
+        return format_stylish(diff_tree)
     elif format_name == 'plain':
         return render_plain(diff_tree)
     else:
