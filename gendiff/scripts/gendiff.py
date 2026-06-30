@@ -4,6 +4,7 @@ from gendiff.parser import parse
 from gendiff.diff_builder import build_diff  # Tu generador de árbol lógico
 from gendiff.formatters.stylish import format_stylish  # Revisa cómo se llama tu función stylish
 from gendiff.formatters.plain import render_plain
+from gendiff.formatters.json import format_json
 
 def generate_diff(file_path1, file_path2, format_name='stylish'):
     data1 = parse(file_path1)
@@ -17,6 +18,8 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
         return format_stylish(diff_tree)
     elif format_name == 'plain':
         return render_plain(diff_tree)
+    elif format_name == 'json':
+        return format_json(diff_tree)
     else:
         raise ValueError(f"Formato no soportado: {format_name}")
 
