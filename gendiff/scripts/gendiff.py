@@ -1,3 +1,5 @@
+import argparse
+
 from gendiff.parser import parse
 from gendiff.diff_builder import build_diff  # Tu generador de árbol lógico
 from gendiff.formatters.stylish import format_stylish  # Revisa cómo se llama tu función stylish
