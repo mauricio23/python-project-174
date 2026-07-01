@@ -6,7 +6,6 @@ def stringify(value, depth):
     if not isinstance(value, dict):
         return str(value)
 
-    # Reajuste de la indentación para diccionarios puros dentro de stringify
     current_indent = "    " * depth
     closing_indent = "    " * (depth - 1)
     lines = ["{"]
@@ -39,6 +38,6 @@ def format_stylish(diff, depth=1):
         elif t == 'unchanged':
             lines.append(f"{indent}{key}: {stringify(node['value'], depth + 1)}")
 
-    # El cierre de la llave principal del nivel actual debe alinearse con el nivel anterior
+    
     lines.append(f"{'    ' * (depth - 1)}}}")
     return "\n".join(lines)

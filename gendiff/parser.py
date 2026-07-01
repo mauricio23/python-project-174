@@ -8,7 +8,7 @@ def parse(file_path):
 
     with open(file_path, 'r', encoding='utf-8') as f:
         if ext == '.json':
-            return json.load(f)  # load sin 's' para leer archivos
+            return json.load(f)  
         elif ext in ['.yml', '.yaml']:
             return yaml.safe_load(f)
         else:

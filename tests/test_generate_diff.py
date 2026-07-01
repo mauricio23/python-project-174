@@ -2,7 +2,6 @@ import pytest
 import os
 from gendiff.scripts.gendiff import generate_diff
 
-# Cambiamos 'fixtures' por 'archivos' para que coincida con tu carpeta
 def get_fixture_path(filename):
     return os.path.join('tests', 'archivos', filename)
 
@@ -29,7 +28,7 @@ def test_generate_diff_json_plain():
     file2 = get_fixture_path('filepath2.json')
     expected = read_file('result_plain.txt')
     
-    # Le pasamos explícitamente 'plain'
+   
     assert generate_diff(file1, file2, 'plain') == expected
 
 def test_generate_diff_yaml_plain():
