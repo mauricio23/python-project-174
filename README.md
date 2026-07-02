@@ -24,7 +24,11 @@ python3 -m venv venv source venv/bin/ activate pip install -e . (ejecutar el cod
 
 grabaciones ascinema
 
-comparacion de archivos = https://asciinema.org/a/79Jsk4RZH1NV46ZJ
+1. comparacion de archivos = https://asciinema.org/a/79Jsk4RZH1NV46ZJ
+2. formato stylish con archivos json = https://asciinema.org/a/FkslCiEZRjOCGYH1
+3. formato stylish con archivos yaml =  https://asciinema.org/a/bqigDF0bSerny2wK
+4. formato plain con json = https://asciinema.org/a/m6tkhAzfNTMZmatT
+5. formato plain con yaml = https://asciinema.org/a/13MRwJUS3V12Tndl
 
 INSTALACION
 
